@@ -8,7 +8,6 @@ import getFormattedWeatherData from './services/weather';
 import { useEffect, useState } from 'react';
 
 function App() {
-
   const [query, setQuery] = useState({q: ''})
   const [units, setUnits] = useState('metric')
   const [weather, setWeather] = useState(null)
