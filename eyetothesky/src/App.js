@@ -61,7 +61,7 @@ function App() {
       <Forecast title="Daily Forecast" items={weather.daily}/>
       </div>
   )}
-  <div className="flex items-center justify-center py-6 text-white">&copy; 2022 - {date}</div>
+  <div className="flex items-center justify-center py-6 text-white">&copy; 2022 - {date} Derek Thibert</div>
     </div>
   );
 }
