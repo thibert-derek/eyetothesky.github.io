@@ -28,16 +28,16 @@ function App() {
       getYear();
   }, [query, units])
 
-  const formatBackground = () => {
-    if (!weather) return "from-blue-500 to-blue-700";
-    const threshold = units === "metric" ? 25 : 77;
-    const freeze = units === "metric" ? 5 : 40;
-    if (weather.temp >= threshold) return "from-orange-700 to-red-700";
+  // const formatBackground = () => {
+  //   if (!weather) return "from-blue-500 to-blue-700";
+  //   const threshold = units === "metric" ? 25 : 77;
+  //   const freeze = units === "metric" ? 5 : 40;
+  //   if (weather.temp >= threshold) return "from-orange-700 to-red-700";
 
-    else if(weather.temp <= freeze) return "from-purple-700 to-blue-700";
+  //   else if(weather.temp <= freeze) return "from-purple-700 to-blue-700";
 
-    return "from-blue-500 to-blue-700";
-  };
+  //   return "from-blue-500 to-blue-700";
+  // };
 
   // const fetchWeather = async() => {
   //   const data = await getFormattedWeatherData({q: 'london'});
@@ -47,9 +47,9 @@ function App() {
 // fetchWeather();
 
   return (
-    <div className= {`mx-auto max-w-screen-xl py-5 px-20 bg-gradient-to-br ${formatBackground()} h-fit shadow-xl-700`} >
-      <h1 className="flex items-center justify-center py-1 text-4xl
-        text-white font-md">Eye To The Sky</h1>
+    <div className= {`mx-auto flex flex-col max-w-screen-xl py-5 px-5 bg-gradient-to-br h-fit shadow-xl-700`} >
+      {/* <h1 className="py-1 text-4xl
+        text-white flex font-md w-[40%]">Eye To The Sky</h1> */}
       <TopButtons setQuery={setQuery}/>
       <Inputs setQuery={setQuery} units={units} setUnits={setUnits}/>
 

@@ -3,29 +3,29 @@ import { iconUrlFromCode } from '../services/weather';
 
 function Forecast({title, items}) {
   return (
-    <div>
+    <div className="lg:ml-[240px] w-full my-5 lg:m-5 lg:p-5 px-5 lg:w-[82%] border-2 rounded">
     <div className="flex items-center justify-start mt-5">
         <p className="text-white font-large text-xl uppercase">
             {title}
         </p>
     </div>
     <hr className="my-1"/>
-    <div className="flex flex-row items-center justify-between text-white">
+    <div className="flex flex-col md:flex-row items-center py-5 justify-between text-white">
     {items.map((item) => (
-           <div className="flex flex-col items-center justify-center">
-            <p className="font-md text-lg">
+           <div className="flex md:border-b-0 border-b-2 py-2 lg:py-0 flex-col items-center justify-center ">
+            <p className="font-md text-lg lg:text-lg">
                {item.event}
            </p>
-           <p className="font-md text-lg">
+           <p className="font-md text-lg justify-center lg:text-lg">
                {item.title}
            </p>
            <img src={iconUrlFromCode(item.icon)}
            alt="" className="w-13 my-1"
            />
-           <p className="font-md text-lg">{`${item.temp.toFixed()}`}&deg;</p>
-           <p className="font-md text-lg capitalize">{`${item.text}`}</p>
+           <p className="font-md text-2xl lg:text-lg">{`${item.temp.toFixed()}`}&deg;</p>
+           <p className="font-md text-lg lg:text-lg hidden lg:flex capitalize">{`${item.text}`}</p>
            <p>P.O.P.</p>
-           <p className="font-md text-lg">{`${item.pop.toFixed(1) * 100}`}%</p> 
+           <p className="font-md text-lg lg:text-lg">{`${item.pop.toFixed(1) * 100}`}%</p> 
            
            
    </div>  

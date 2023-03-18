@@ -27,33 +27,33 @@ function Inputs({setQuery, units, setUnits}) {
   };
 
   return (
-    <div className="flex flex-row justify-center my-6">
-        <div className="flex flex-row w-3/4 items-center justify-center space-x-4">
+    <div className="justify-center flex mt-[125px] md:w-[700px] md:mt-[0px] lg:ml-[240px] active:z-0">
+        <div className="items-center flex flex-row w-full space-x-4">
 
         <input 
         value={city}
         onChange={(e) => setCity(e.currentTarget.value)}
         type="text" 
         placeholder="Search for city...."
-        className="text-xl font-light p-2 p=2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
+        className="flex-1 h-[50px] rounded bg-white text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
         />
         <UilSearch 
-        size={30} 
+        size={40} 
         className="text-white cursor-pointer transition ease-out hover:scale-125"
         onClick={handleSearchClick}
         />
         
         <UilLocationPoint 
-        size={30} 
+        size={40} 
         className="text-white cursor-pointer transition ease-out hover:scale-125"
         onClick={handleLocationClick}/>
         </div>
 
-        <div className="flex flex-row w-1/4 items-center justify-center">
-          <button name="metric" className="text-2xl text-white font-md transition ease-out hover:scale-125"
+        <div className="flex flex-row p-2 items-center justify-center">
+          <button name="metric" className="text-4xl text-white font-md transition ease-out hover:scale-125"
           onClick={handleUnitChange}>&deg;C</button>
-          <p className="text-xl text-white mx-1"> | </p>
-          <button name="imperial" className="text-2xl text-white font-md transition ease-out hover:scale-125"
+          {/* <p className="text-xl text-white mx-1">  |  </p> */}
+          <button name="imperial" className="text-4xl text-white pl-2 font-md transition ease-out hover:scale-125"
           onClick={handleUnitChange}>&deg;F</button>
         </div>
     </div>
