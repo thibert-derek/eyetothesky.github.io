@@ -16,10 +16,10 @@ import { formatToLocalTime, iconUrlFromCode } from '../services/weather';
 
 function Details({weather: {
    description, icon, temp, temp_min, temp_max, sunrise, sunset,
-   speed, humidity, feels_like, timezone, unit, pressure, all
+   speed, humidity, feels_like, timezone, units, pressure, all
 }}) {
 
-    const windUnit = unit === 'metric' ? 'km/h' : 'mph';
+    const windUnit = units === "metric" ? "km/h" : "mph";
   return (
     <div className="w-full lg:w-[82%] my-5 lg:ml-[240px] border-2 rounded lg:m-5 lg:p-5">
         <div className="flex flex-col items-center justify-center py-3 text-3xl md:text-4xl
