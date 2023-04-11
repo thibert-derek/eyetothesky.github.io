@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+// import axios from 'axios';
 import { UilSearch, UilLocationPoint} from '@iconscout/react-unicons';
 
 function Inputs({setQuery, units, setUnits}) {

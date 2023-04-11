@@ -16,6 +16,7 @@ function App() {
   const getYear = () => setDate(new Date().getFullYear())
 
   useEffect(() => {
+    if (query?.q !== ''){
     const fetchWeather = async() => {
           await getFormattedWeatherData({...query, units }).then(data =>
            {
@@ -26,6 +27,7 @@ function App() {
       
       fetchWeather();
       getYear();
+    }
   }, [query, units])
 
   // const formatBackground = () => {

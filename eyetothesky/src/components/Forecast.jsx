@@ -11,8 +11,8 @@ function Forecast({title, items}) {
     </div>
     <hr className="my-1"/>
     <div className="flex flex-col md:flex-row items-center py-5 justify-between text-white">
-    {items.map((item) => (
-           <div className="flex md:border-b-0 border-b-2 py-2 lg:py-0 flex-col items-center justify-center ">
+    {items.map((item, index) => (
+           <div key={index} className="flex md:border-b-0 border-b-2 py-2 lg:py-0 flex-col items-center justify-center ">
             <p className="font-md text-lg lg:text-lg">
                {item.event}
            </p>

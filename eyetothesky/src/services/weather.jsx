@@ -7,11 +7,25 @@ const getWeatherData=(infoType, searchParams) => {
     const url = new URL(BASE_URL + '/' + infoType);
     url.search = new URLSearchParams({...searchParams, appid:
         API_KEY});
-    
+
+
     return fetch(url)
         .then((res) => res.json())
 
 };
+
+const dirCheck=(setQuery) => {
+  if(navigator.geolocation){
+   navigator.geolocation.getCurrentPosition((position) => {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    setQuery({
+        lat, lon
+    });
+   });
+  }      
+}
 
 const formatCurrentWeather = (data) => {
     const {
@@ -24,6 +38,10 @@ const formatCurrentWeather = (data) => {
         weather,
         wind: {speed}
     } = data
+
+        if(lat === '' && lon === ''){
+            dirCheck();
+        }
 
     const {main: details, description, icon} = weather[0]
 
@@ -75,7 +93,7 @@ const getFormattedWeatherData = async (searchParams) => {
         const formattedForecastWeather = await getWeatherData('onecall', {
             lat,
             lon, 
-            exlude: 'current,minutely,alerts', 
+            exclude: 'current,minutely,alerts', 
             units: searchParams.units,
         }).then(formatForecastWeather)
 
