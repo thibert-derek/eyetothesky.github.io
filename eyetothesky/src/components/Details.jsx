@@ -32,9 +32,10 @@ function Details({weather: {
             <img 
             src={iconUrlFromCode(icon)}
             alt="" className="w-40"/>
-            <p className="text-6xl md:text-7xl pb-4">
+            <p className="text-6xl md:text-8xl pb-4">
                 {`${temp.toFixed()}`}&deg;
             </p>
+            
             <div className="flex flex-col space-y-2 py-4">
                 <div className="flex font-light text-2xl
                 items-center justify-right">
@@ -71,20 +72,20 @@ function Details({weather: {
 
         <div className="border-b-2 flex flex-row items-center justify-center
         space-x-2 text-white text-2xl md:text-xl md:border-t-0 border-t-2 py-5 lg:py-3 px-3">
-            <UilSun size={30} className="mr-1"/>
+            <UilSun size={30} className="hidden md:block mr-1"/>
             <p className="font-light">Sunrise: <span className="font-medium ml-1">
             {formatToLocalTime(sunrise, timezone, "hh:mm a")}</span></p>
             <p className="font-light">|</p>
-            <UilSunset size={30} className="mr-1"/>
+            <UilSunset size={30} className="hidden md:block mr-1"/>
             <p className="font-light">Sunset: <span className="font-medium ml-1">
             {formatToLocalTime(sunset, timezone, "hh:mm a")}</span></p>
             </div>
         <div className="flex flex-row items-center justify-center
         space-x-2 text-white text-2xl md:text-xl md:border-t-0 border-t-2 py-5 lg:py-3 px-3"> 
-            <UilArrowUp size={30} className="mr-1"/>
+            <UilArrowUp size={30} className="hidden md:block mr-1"/>
             <p className="font-light">High: <span className="font-medium ml-1">{`${temp_max.toFixed()}`}&deg;</span></p>
             <p className="font-light">|</p>
-            <UilArrowDown size={30} className="mr-1"/>
+            <UilArrowDown size={30} className="hidden md:block mr-1"/>
             <p className="font-light">Low: <span className="font-medium ml-1">{`${temp_min.toFixed()}`}&deg;</span></p>
         
         </div>
