@@ -14,18 +14,18 @@ const getWeatherData=(infoType, searchParams) => {
 
 };
 
-const dirCheck=(setQuery) => {
-  if(navigator.geolocation){
-   navigator.geolocation.getCurrentPosition((position) => {
-    let lat = position.coords.latitude;
-    let lon = position.coords.longitude;
+// const dirCheck=(setQuery) => {
+//   if(navigator.geolocation){
+//    navigator.geolocation.getCurrentPosition((position) => {
+//     let lat = position.coords.latitude;
+//     let lon = position.coords.longitude;
 
-    setQuery({
-        lat, lon
-    });
-   });
-  }      
-}
+//     setQuery({
+//         lat, lon
+//     });
+//    });
+//   }      
+// }
 
 const formatCurrentWeather = (data) => {
     const {
@@ -39,9 +39,9 @@ const formatCurrentWeather = (data) => {
         wind: {speed}
     } = data
 
-        if(lat === '' && lon === ''){
-            dirCheck();
-        }
+        // if(lat === '' && lon === ''){
+        //     dirCheck();
+        // }
 
     const {main: details, description, icon} = weather[0]
 

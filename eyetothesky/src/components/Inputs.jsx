@@ -28,7 +28,7 @@ function Inputs({setQuery, units, setUnits}) {
   };
 
   return (
-    <div className="justify-center flex mt-[125px] md:w-[700px] md:mt-[0px] lg:ml-[240px] active:z-0">
+    <div className="justify-center md:flex mt-[125px] md:w-[700px] md:mt-[0px] lg:ml-[240px] active:z-0">
         <div className="items-center flex flex-row w-full space-x-4">
 
         <input 

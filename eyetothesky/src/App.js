@@ -26,9 +26,12 @@ function App() {
         };
       
       fetchWeather();
-      getYear();
     }
+      getYear();
+    
   }, [query, units])
+
+  if(!query) return 'loading';
 
   // const formatBackground = () => {
   //   if (!weather) return "from-blue-500 to-blue-700";
